@@ -1,5 +1,6 @@
+import { Link } from "@inertiajs/react";
 import { useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
     const location = useLocation();
@@ -29,7 +30,7 @@ export default function Header() {
                     </div>
 
                     <div className="right">
-                        <Link className="topbar-link" to="/contact.php">
+                        <Link className="topbar-link" href="/contact.php">
                             📞 Contact Us
                         </Link>
                     </div>
@@ -39,7 +40,7 @@ export default function Header() {
             {/* ===== Navbar ===== */}
             <header className="nav" id="home">
                 <div className="container nav-row">
-                    <Link className="brand" to="/index.php">
+                    <Link className="brand" href="/index.php">
                         <img
                             src="/img/nastr.png"
                             alt="NAST College"
@@ -49,30 +50,30 @@ export default function Header() {
 
                     {/* Desktop menu */}
                     <nav className="nav-links">
-                        <Link to="/about.php" className={isActive("about.php")}>
+                        <Link href="/about" className={isActive("about.php")}>
                             About Us
                         </Link>
                         <Link
-                            to="/program.php"
+                            href="/program.php"
                             className={isActive("program.php")}
                         >
                             Programmes
                         </Link>
                         <Link
-                            to="/facility.php"
+                            href="/facility.php"
                             className={isActive("facility.php")}
                         >
                             Facilities
                         </Link>
                         <Link
-                            to="/gallery.php"
+                            href="/gallery.php"
                             className={isActive("gallery.php")}
                         >
                             Gallery
                         </Link>
 
                         <Link
-                            to="/apply.php"
+                            href="/apply.php"
                             className={`btn cta ${isActive("apply.php")}`}
                         >
                             Apply Online
@@ -103,32 +104,32 @@ export default function Header() {
                                 </button>
 
                                 <Link
-                                    to="/about.php"
+                                    href="/about.php"
                                     className={isActive("about.php")}
                                 >
                                     About Us
                                 </Link>
                                 <Link
-                                    to="/program.php"
+                                    href="/program.php"
                                     className={isActive("program.php")}
                                 >
                                     Programmes
                                 </Link>
                                 <Link
-                                    to="/facility.php"
+                                    href="/facility.php"
                                     className={isActive("facility.php")}
                                 >
                                     Facilities
                                 </Link>
                                 <Link
-                                    to="/gallery.php"
+                                    href="/gallery.php"
                                     className={isActive("gallery.php")}
                                 >
                                     Gallery
                                 </Link>
 
                                 <Link
-                                    to="/apply.php"
+                                    href="/apply.php"
                                     className={`btn primary full ${isActive(
                                         "apply.php"
                                     )}`}
