@@ -16,4 +16,8 @@ class HomeController extends Controller
     {
         return Inertia::render('About');
     }
+    public function programs()
+    {
+        return Inertia::render('Programs');
+    }
 }

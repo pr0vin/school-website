@@ -54,7 +54,7 @@ export default function Header() {
                             About Us
                         </Link>
                         <Link
-                            href="/program.php"
+                            href="/programs"
                             className={isActive("program.php")}
                         >
                             Programmes

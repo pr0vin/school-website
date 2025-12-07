@@ -21,6 +21,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
