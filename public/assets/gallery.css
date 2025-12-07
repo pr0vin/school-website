@@ -1,0 +1,191 @@
+/* ===========================================================
+   Gallery Page – NAST College Dhangadhi
+   Responsive Grid + Hover Zoom + Lightbox Popup
+   All classes prefixed with g- to avoid conflicts.
+=========================================================== */
+
+/* -------------------- HERO -------------------- */
+.g-hero {
+  position: relative;
+  min-height: clamp(260px, 45vh, 380px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.g-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%) contrast(105%);
+  z-index: -2;
+}
+
+.g-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.65));
+  z-index: -1;
+}
+
+.g-hero-content {
+  padding: clamp(40px, 6vh, 70px);
+  max-width: 1100px;
+  margin: auto;
+  width: 100%;
+}
+
+.g-hero-top {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.9rem;
+  opacity: .85;
+  margin-bottom: 6px;
+}
+
+.g-hero-title {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.g-hero-text {
+  font-size: 0.98rem;
+  max-width: 620px;
+  opacity: 0.95;
+}
+
+/* -------------------- WRAPPER -------------------- */
+.g-wrapper {
+  padding: clamp(60px, 6vw, 90px) 0;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* Section Title */
+.g-section-head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.g-section-head h2 {
+  font-size: clamp(1.7rem, 2.3vw, 2.2rem);
+  color: var(--brand-900, #0b2559);
+  margin-bottom: 10px;
+}
+
+.g-section-head p {
+  max-width: 650px;
+  margin: auto;
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
+
+/* -------------------- GALLERY GRID -------------------- */
+.g-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.g-item {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f1f1f1;
+  position: relative;
+}
+
+.g-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.g-item:hover img {
+  transform: scale(1.08);
+}
+
+/* -------------------- LIGHTBOX -------------------- */
+.g-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.g-lightbox img {
+  max-width: 92%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+
+/* Show when targeted */
+.g-lightbox:target {
+  display: flex;
+}
+
+/* Close button */
+.g-close {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  font-size: 2.3rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10000;
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity .2s ease;
+}
+
+.g-close:hover {
+  opacity: 0.7;
+}
+
+/* -------------------- REVEAL ANIMATION -------------------- */
+.g-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.g-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  .g-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .g-close {
+    right: 18px;
+    top: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .g-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .g-hero-title {
+    font-size: 1.8rem;
+  }
+}
